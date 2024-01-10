@@ -4,19 +4,23 @@ import { Square } from './Square';
 export const Board = () => {
   // This creates an array with 9 elements, with each element set to null
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [isXnext, setIsXnext] = useState(false);
 
-  console.log(squares)
-  
   const hanldeSquareClick = clickedPosition => {
+    if (squares[clickedPosition]) {
+      return
+    }
+
     setSquares(currentSquares => {
       return currentSquares.map((squareValue, position) => {
         if (clickedPosition === position) {
-          return 'X';
+          return isXnext ? 'X' : 'O';
         }
 
         return squareValue;
       });
     });
+    setIsXnext(prevIsXnext => !prevIsXnext);
   };
 
   const renderSquare = position => {
