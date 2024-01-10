@@ -1,3 +1,8 @@
-export const Square = ({ value }) => {
-  return <button type="button">{value}</button>;
+
+export const Square = ({ value, onClick }) => {
+  return (
+    <button className="square" type="button" onClick={onClick}>
+      {value}
+    </button>
+  );
 };
