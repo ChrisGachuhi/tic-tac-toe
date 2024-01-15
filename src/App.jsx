@@ -4,6 +4,7 @@ import './App.css';
 import './styles.scss';
 import { Board } from './components/Board';
 import { calculateWinner } from '../winner';
+import { StatusMessage } from './components/StatusMessage';
 
 function App() {
   // This creates an array with 9 elements, with each element set to null
@@ -11,11 +12,11 @@ function App() {
   const [isXnext, setIsXnext] = useState(false);
 
   const winner = calculateWinner(squares);
-  const nextPlayer = isXnext ? 'X' : 'O';
-  
-  const statusMessage = winner
-    ? `Winner is ${winner}`
-    : `Next Player is ${nextPlayer}`;
+  // const nextPlayer = isXnext ? 'X' : 'O';
+
+  // const statusMessage = winner
+  //   ? `Winner is ${winner}`
+  //   : `Next Player is ${nextPlayer}`;
 
   const hanldeSquareClick = clickedPosition => {
     if (squares[clickedPosition] || winner) {
@@ -38,7 +39,8 @@ function App() {
     <div className="app">
       {/* <h2>Next Player is {nextPlayer} </h2> */}
       {/* we changed the above to accomodate the message when game is won */}
-      <h2>{statusMessage} </h2>
+      {/* <h2>{statusMessage} </h2> */}
+      <StatusMessage winner={winner} isXnext={isXnext} squares={squares} />
       <Board squares={squares} hanldeSquareClick={hanldeSquareClick} />
     </div>
   );
