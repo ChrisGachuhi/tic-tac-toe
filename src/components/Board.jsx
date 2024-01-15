@@ -1,27 +1,28 @@
-import { useState } from 'react';
 import { Square } from './Square';
 
-export const Board = () => {
-  // This creates an array with 9 elements, with each element set to null
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [isXnext, setIsXnext] = useState(false);
+export const Board = ({squares, hanldeSquareClick}) => {
+  // // This creates an array with 9 elements, with each element set to null
+  // const [squares, setSquares] = useState(Array(9).fill(null));
+  // const [isXnext, setIsXnext] = useState(false);
 
-  const hanldeSquareClick = clickedPosition => {
-    if (squares[clickedPosition]) {
-      return
-    }
+  // const hanldeSquareClick = clickedPosition => {
+  //   if (squares[clickedPosition]) {
+  //     return
+  //   }
 
-    setSquares(currentSquares => {
-      return currentSquares.map((squareValue, position) => {
-        if (clickedPosition === position) {
-          return isXnext ? 'X' : 'O';
-        }
+  //   setSquares(currentSquares => {
+  //     return currentSquares.map((squareValue, position) => {
+  //       if (clickedPosition === position) {
+  //         return isXnext ? 'X' : 'O';
+  //       }
 
-        return squareValue;
-      });
-    });
-    setIsXnext(prevIsXnext => !prevIsXnext);
-  };
+  //       return squareValue;
+  //     });
+  //   });
+  //   setIsXnext((prevIsXnext) => !prevIsXnext);
+  // };
+
+  // moved the above to app.jsx for the data to be accessed everywhere
 
   const renderSquare = position => {
     return (
