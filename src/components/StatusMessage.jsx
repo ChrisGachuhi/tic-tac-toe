@@ -1,4 +1,8 @@
-export const StatusMessage = ({ winner, isXnext, squares }) => {
+// export const StatusMessage = ({ winner, isXnext, squares }) => {
+export const StatusMessage = ({ winner, gamingBoard }) => {
+  // destructure isXnext and squares from gamingBoard below
+  const {isXnext, squares} = gamingBoard
+
   const noMovesLeft = squares.every(squareValue => squareValue !== null);
 
   const nextPlayer = isXnext ? 'X' : 'O';
