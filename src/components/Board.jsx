@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Square } from './Square';
 
-// eslint-disable-next-line react/prop-types
 export const Board = ({squares, hanldeSquareClick, winningSquares}) => {
   // // This creates an array with 9 elements, with each element set to null
   // const [squares, setSquares] = useState(Array(9).fill(null));

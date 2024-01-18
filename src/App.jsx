@@ -85,6 +85,7 @@ function App() {
   };
   return (
     <div className="app">
+      <h1>TIC-<span className='text-green'>TAC</span>-TOE</h1>
       {/* <h2>Next Player is {nextPlayer} </h2> */}
       {/* we changed the above to accomodate the message when game is won */}
       {/* <h2>{statusMessage} </h2> */}

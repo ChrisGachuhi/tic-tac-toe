@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 export const History = ({ history, moveTo, currentMove }) => {
   return (
     <div className="history-wrapper">
           <ul className="history">
-              <h2>Current Game History</h2>
+              <h2 style={{fontWeight:'400'}}>Current Game History</h2>
         {history.map((_, index) => (
           <li key={index}>
             <button
