@@ -1,7 +1,7 @@
 import { Square } from './Square';
 
 // eslint-disable-next-line react/prop-types
-export const Board = ({squares, hanldeSquareClick}) => {
+export const Board = ({squares, hanldeSquareClick, winningSquares}) => {
   // // This creates an array with 9 elements, with each element set to null
   // const [squares, setSquares] = useState(Array(9).fill(null));
   // const [isXnext, setIsXnext] = useState(false);
@@ -26,10 +26,13 @@ export const Board = ({squares, hanldeSquareClick}) => {
   // moved the above to app.jsx for the data to be accessed everywhere
 
   const renderSquare = position => {
+    const isWinningSquare = winningSquares.includes(position)
+
     return (
       <Square
         value={squares[position]}
         onClick={() => hanldeSquareClick(position)}
+        isWinningSquare = {isWinningSquare}
       />
     );
   };

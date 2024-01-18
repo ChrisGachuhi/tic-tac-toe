@@ -22,7 +22,7 @@ function App() {
   // const [isXnext, setIsXnext] = useState(false);
 
   // const winner = calculateWinner(squares);
-  const winner = calculateWinner(gamingBoard.squares);
+  const {winner, winningSquares} = calculateWinner(gamingBoard.squares);
   // const nextPlayer = isXnext ? 'X' : 'O';
 
   // const statusMessage = winner
@@ -95,6 +95,7 @@ function App() {
       <Board
         squares={gamingBoard.squares}
         hanldeSquareClick={hanldeSquareClick}
+        winningSquares = {winningSquares}
       />
 
       <button type="button" className={`btn-reset ${winner ? 'active' : ''}`} onClick={onNewGameStart}>
